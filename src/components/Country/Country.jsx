@@ -12,6 +12,10 @@ const Country = ({ country }) => {
       </div>
 
       <h4> Name : {country.name?.common} </h4>
+      <p>
+        {" "}
+        Area is: {country.area} km and population is: {country.population}
+      </p>
     </div>
   );
 };
