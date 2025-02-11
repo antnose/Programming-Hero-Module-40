@@ -22,3 +22,5 @@ const Countries = () => {
 export default Countries;
 
 // start from 40-3 recap folder structure and turn off prop types eslint warning
+
+// 40-5 conditional css and conditional style 2.49
