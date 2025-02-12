@@ -8,7 +8,9 @@ const Country = ({ country, handleVisitedCountry }) => {
     setVisited(!visited);
   };
 
-  console.log(handleVisitedCountry);
+  const passWithParams = (country) => {
+    handleVisitedCountry(country);
+  };
 
   return (
     <div className="country">
@@ -28,9 +30,9 @@ const Country = ({ country, handleVisitedCountry }) => {
         <small> Code: {country.cca3} </small>
       </p>
 
-      <button>Mark Visited</button>
+      <button onClick={handleVisitedCountry}>Mark Visited</button>
       <br />
-      <button onClick={handleVisited}>Visited</button>
+      <button onClick={passWithParams}>Visited</button>
       {visited ? (
         <imghandleVisitedCountry
           width="30px"
