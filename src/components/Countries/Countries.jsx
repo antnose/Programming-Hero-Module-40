@@ -5,6 +5,7 @@ import "./Countries.css";
 const Countries = () => {
   const [countries, setCountries] = useState([]);
   const [visitedCountries, setVisitedCountries] = useState([]);
+  const [visitedFlags, setVisitedFlags] = useState([]);
 
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
@@ -18,10 +19,18 @@ const Countries = () => {
     setVisitedCountries(newVisitedCountries);
   };
 
+  const handleVisitedFlags = (flag) => {
+    const newVisitedFlags = [...visitedFlags, flag];
+    setVisitedFlags(newVisitedFlags);
+  };
+
   return (
     <>
       <div>
         <h4>Visited Countries : {visitedCountries.length} </h4>
+        {visitedFlags.map((flag) => (
+          <img src={flag.png} alt="" />
+        ))}
         <ul>
           {visitedCountries.map((country) => (
             <li> {country.name?.common} </li>
@@ -34,6 +43,7 @@ const Countries = () => {
             key={country.cca3}
             country={country}
             handleVisitedCountry={handleVisitedCountry}
+            handleVisitedFlags={handleVisitedFlags}
           />
         ))}
       </div>
@@ -42,3 +52,5 @@ const Countries = () => {
 };
 
 export default Countries;
+
+// 7th videos complete 6.04 minute of 40 module
