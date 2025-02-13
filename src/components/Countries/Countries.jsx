@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { useState, useEffect } from "react";
 import Country from "../Country/Country";
 import "./Countries.css";
@@ -52,5 +53,3 @@ const Countries = () => {
 };
 
 export default Countries;
-
-// 7th videos complete 6.04 minute of 40 module
